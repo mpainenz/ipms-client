@@ -9,7 +9,7 @@ This library supports TLS1.2 SSL.
 
 # Example code
 
-In order to make things simple for those who aren't familiar with Programming, most of the more complicated code is wrapped inside a class called TNASConnection. You use this class to connect and run commands against IPMS. This means connecting to IPMS can be done in only three lines of code.
+In order to make things simple for those who aren't familiar with Programming, most of the more complicated code is wrapped inside a class called TNASConnection. You use this class to connect and run commands against IPMS.
 
 ```sh
 ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN,
