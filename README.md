@@ -1,7 +1,7 @@
 # IPMS-Client
 IPMS Client
 
-IPMS ([https://www.tcf.org.nz/industry/numbering/number-portability/access-to-ipms/](Industry Portability Management System)) is a government regulated service provided to New Zealand for use by Carriers and Service providers in order to Port telephone numbers between member Companys.
+IPMS ([Industry Portability Management System](https://www.tcf.org.nz/industry/numbering/number-portability/access-to-ipms/)) is a government regulated service provided to New Zealand for use by Carriers and Service providers in order to Port telephone numbers between member Companys.
 
 This project contains a very simple, easy to use, IPMS API Client written in Python 3.6.
 
