@@ -1,0 +1,1794 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://transferobjects.ipms.tcf.org.nz" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ServiceOrderService" targetNamespace="http://transferobjects.ipms.tcf.org.nz">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://transferobjects.ipms.tcf.org.nz" elementFormDefault="unqualified" targetNamespace="http://transferobjects.ipms.tcf.org.nz" version="1.0">
+
+  <xs:element name="acceptApprovedPortChange" type="tns:acceptApprovedPortChange"/>
+
+  <xs:element name="acceptApprovedPortChangeResponse" type="tns:acceptApprovedPortChangeResponse"/>
+
+  <xs:element name="activatePort" type="tns:activatePort"/>
+
+  <xs:element name="activatePortResponse" type="tns:activatePortResponse"/>
+
+  <xs:element name="approvePort" type="tns:approvePort"/>
+
+  <xs:element name="approvePortResponse" type="tns:approvePortResponse"/>
+
+  <xs:element name="cancelPort" type="tns:cancelPort"/>
+
+  <xs:element name="cancelPortResponse" type="tns:cancelPortResponse"/>
+
+  <xs:element name="changePassword" type="tns:changePassword"/>
+
+  <xs:element name="changePasswordResponse" type="tns:changePasswordResponse"/>
+
+  <xs:element name="completePort" type="tns:completePort"/>
+
+  <xs:element name="completePortResponse" type="tns:completePortResponse"/>
+
+  <xs:element name="confirmNetworkUpdates" type="tns:confirmNetworkUpdates"/>
+
+  <xs:element name="confirmNetworkUpdatesResponse" type="tns:confirmNetworkUpdatesResponse"/>
+
+  <xs:element name="failPort" type="tns:failPort"/>
+
+  <xs:element name="failPortResponse" type="tns:failPortResponse"/>
+
+  <xs:element name="getApprovedPortChangeRequests" type="tns:getApprovedPortChangeRequests"/>
+
+  <xs:element name="getApprovedPortChangeRequestsResponse" type="tns:getApprovedPortChangeRequestsResponse"/>
+
+  <xs:element name="getApprovedPorts" type="tns:getApprovedPorts"/>
+
+  <xs:element name="getApprovedPortsResponse" type="tns:getApprovedPortsResponse"/>
+
+  <xs:element name="getCarriers" type="tns:getCarriers"/>
+
+  <xs:element name="getCarriersResponse" type="tns:getCarriersResponse"/>
+
+  <xs:element name="getCompanies" type="tns:getCompanies"/>
+
+  <xs:element name="getCompaniesResponse" type="tns:getCompaniesResponse"/>
+
+  <xs:element name="getCurrentUserData" type="tns:getCurrentUserData"/>
+
+  <xs:element name="getCurrentUserDataResponse" type="tns:getCurrentUserDataResponse"/>
+
+  <xs:element name="getNetworkUpdates" type="tns:getNetworkUpdates"/>
+
+  <xs:element name="getNetworkUpdatesResponse" type="tns:getNetworkUpdatesResponse"/>
+
+  <xs:element name="getPortProgress" type="tns:getPortProgress"/>
+
+  <xs:element name="getPortProgressResponse" type="tns:getPortProgressResponse"/>
+
+  <xs:element name="getRequestedPorts" type="tns:getRequestedPorts"/>
+
+  <xs:element name="getRequestedPortsResponse" type="tns:getRequestedPortsResponse"/>
+
+  <xs:element name="getServiceProviders" type="tns:getServiceProviders"/>
+
+  <xs:element name="getServiceProvidersResponse" type="tns:getServiceProvidersResponse"/>
+
+  <xs:element name="numberEnquiry" type="tns:numberEnquiry"/>
+
+  <xs:element name="numberEnquiryResponse" type="tns:numberEnquiryResponse"/>
+
+  <xs:element name="portProgressResult" type="tns:portProgressResult"/>
+
+  <xs:element name="rejectApprovedPortChange" type="tns:rejectApprovedPortChange"/>
+
+  <xs:element name="rejectApprovedPortChangeResponse" type="tns:rejectApprovedPortChangeResponse"/>
+
+  <xs:element name="rejectPort" type="tns:rejectPort"/>
+
+  <xs:element name="rejectPortResponse" type="tns:rejectPortResponse"/>
+
+  <xs:element name="requestApprovedPortChange" type="tns:requestApprovedPortChange"/>
+
+  <xs:element name="requestApprovedPortChangeResponse" type="tns:requestApprovedPortChangeResponse"/>
+
+  <xs:element name="requestEmergencyReturn" type="tns:requestEmergencyReturn"/>
+
+  <xs:element name="requestEmergencyReturnResponse" type="tns:requestEmergencyReturnResponse"/>
+
+  <xs:element name="requestPort" type="tns:requestPort"/>
+
+  <xs:element name="requestPortResponse" type="tns:requestPortResponse"/>
+
+  <xs:element name="requestRelinquishment" type="tns:requestRelinquishment"/>
+
+  <xs:element name="requestRelinquishmentResponse" type="tns:requestRelinquishmentResponse"/>
+
+  <xs:element name="sOMEnquiry" type="tns:sOMEnquiry"/>
+
+  <xs:element name="sOMEnquiryResponse" type="tns:sOMEnquiryResponse"/>
+
+  <xs:element name="sOMStatusEnquiry" type="tns:sOMStatusEnquiry"/>
+
+  <xs:element name="sOMStatusEnquiryResponse" type="tns:sOMStatusEnquiryResponse"/>
+
+  <xs:element name="serviceOrderResult" type="tns:serviceOrderResult"/>
+
+  <xs:element name="submitPortResponse" type="tns:submitPortResponse"/>
+
+  <xs:element name="submitPortResponseResponse" type="tns:submitPortResponseResponse"/>
+
+  <xs:element name="updatePortProgress" type="tns:updatePortProgress"/>
+
+  <xs:element name="updatePortProgressResponse" type="tns:updatePortProgressResponse"/>
+
+  <xs:element name="withdrawPort" type="tns:withdrawPort"/>
+
+  <xs:element name="withdrawPortResponse" type="tns:withdrawPortResponse"/>
+
+  <xs:complexType name="getCompanies">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCompaniesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:companiesResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="companiesResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="companies" nillable="true" type="tns:companyData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="result">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="errors" nillable="true" type="tns:errorData"/>
+      <xs:element name="success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="companyData">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="errorData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="error" type="tns:ipmsError"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ipmsError">
+    <xs:sequence>
+      <xs:element name="code" type="xs:int"/>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element minOccurs="0" name="mnemonic" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="completePort">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="completePortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="serviceOrderResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence/>
+        <xs:attribute name="approvedPortChangeState" type="xs:string"/>
+        <xs:attribute name="som" type="xs:long" use="required"/>
+        <xs:attribute name="state" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getCarriers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="companyId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCarriersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:carriersResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="carriersResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="carriers" nillable="true" type="tns:carrierData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="carrierData">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" type="tns:carrierType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="carrierType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestEmergencyReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="emergencyReturnRequestData" type="tns:emergencyReturnRequestData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="emergencyReturnRequestData">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:phoneNumberData"/>
+      <xs:element minOccurs="0" name="RFSDateTimeStart" type="xs:dateTime"/>
+      <xs:element name="SOM" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="phoneNumberData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestEmergencyReturnResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sOMStatusEnquiry">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sOMStatusEnquiryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:somStatusEnquiryResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="somStatusEnquiryResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="som" type="tns:somDetail"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:numbersProgressDetail"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="relinquishmentNumbers" nillable="true" type="tns:numberRelinquishmentData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="somDetail">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element minOccurs="0" name="somStatus" type="tns:somStatus"/>
+      <xs:element minOccurs="0" name="apcStatus" type="tns:apcStatus"/>
+      <xs:element minOccurs="0" name="relinquishmentStatus" type="tns:relinquishmentStatus"/>
+      <xs:element minOccurs="0" name="rfsDateStart" type="xs:dateTime"/>
+      <xs:element name="gainingCarrierId" type="xs:int"/>
+      <xs:element name="gainingServiceProviderId" type="xs:int"/>
+      <xs:element minOccurs="0" name="gainingServiceProviderContact" type="xs:string"/>
+      <xs:element name="losingServiceProviderId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="somStatus">
+    <xs:complexContent>
+      <xs:extension base="tns:status">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="apcStatus">
+    <xs:complexContent>
+      <xs:extension base="tns:status">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="relinquishmentStatus">
+    <xs:complexContent>
+      <xs:extension base="tns:somStatus">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="numbersProgressDetail">
+    <xs:sequence>
+      <xs:element name="complete" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="gainingCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="losingCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="handsetReference" type="xs:string"/>
+      <xs:element name="notRequired" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="phoneNumber" type="tns:phoneNumberData"/>
+      <xs:element minOccurs="0" name="gainingCarrierProgress" type="xs:string"/>
+      <xs:element minOccurs="0" name="losingCarrierProgress" type="xs:string"/>
+      <xs:element minOccurs="0" name="testedAndCompleteProgress" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="numberRelinquishmentData">
+    <xs:sequence>
+      <xs:element name="losingCarrierId" type="xs:int"/>
+      <xs:element name="lspId" type="xs:int"/>
+      <xs:element minOccurs="0" name="number" type="tns:phoneNumberData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activatePort">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activatePortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getApprovedPortChangeRequests">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="statusList" type="tns:apcStatus"/>
+      <xs:element minOccurs="0" name="filter" type="xs:string"/>
+      <xs:element minOccurs="0" name="rfsToDate" type="xs:dateTime"/>
+      <xs:element name="overdueOnly" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getApprovedPortChangeRequestsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:apcListResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="apcListResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="approvedPortChangeRequests" nillable="true" type="tns:apcRequestDetailData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="apcRequestDetailData">
+    <xs:complexContent>
+      <xs:extension base="tns:apcRequestData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="category" type="xs:string"/>
+          <xs:element minOccurs="0" name="requestDateTime" type="xs:dateTime"/>
+          <xs:element name="requesterServiceProviderId" type="xs:int"/>
+          <xs:element name="responderServiceProviderId" type="xs:int"/>
+          <xs:element minOccurs="0" name="responseDue" type="tns:durationData"/>
+          <xs:element minOccurs="0" name="status" type="tns:apcStatus"/>
+          <xs:element name="version" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="apcRequestData">
+    <xs:sequence>
+      <xs:element name="lspOverride" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:numberPortData"/>
+      <xs:element minOccurs="0" name="rfsDateTimeStart" type="xs:dateTime"/>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="durationData">
+    <xs:sequence>
+      <xs:element name="actualDays" type="xs:int"/>
+      <xs:element name="actualHours" type="xs:int"/>
+      <xs:element name="actualMinutes" type="xs:int"/>
+      <xs:element name="businessDays" type="xs:int"/>
+      <xs:element name="businessHours" type="xs:int"/>
+      <xs:element name="businessMinutes" type="xs:int"/>
+      <xs:element name="negative" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="numberPortData">
+    <xs:sequence>
+      <xs:element name="complete" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="gainingCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="handsetReference" type="xs:string"/>
+      <xs:element minOccurs="0" name="losingCarrierId" type="xs:int"/>
+      <xs:element name="notRequired" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="phoneNumber" type="tns:phoneNumberData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="withdrawPort">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="withdrawPortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="failPort">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="failPortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approvePort">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="approvedPort" type="tns:portResponseData"/>
+      <xs:element minOccurs="0" name="gspRFSDateTimeStart" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="portResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+      <xs:element name="accountNumberIncorrect" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="category" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerName" type="xs:string"/>
+      <xs:element name="losingServiceProviderIncorrect" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="lspInternalReference" type="xs:string"/>
+      <xs:element name="lspOverride" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:numberPortData"/>
+      <xs:element name="prePayPrePaid" type="xs:boolean"/>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approvePortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cancelPort">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cancelPortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="numberEnquiry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="number" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="numberEnquiryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:numberEnquiryResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="numberEnquiryResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="carrierId" type="xs:int"/>
+          <xs:element minOccurs="0" name="donorCarrierId" type="xs:int"/>
+          <xs:element minOccurs="0" name="number" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="SOMs" nillable="true" type="tns:somSummaryForNumberData"/>
+          <xs:element minOccurs="0" name="serviceProviderId" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="somSummaryForNumberData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gainingCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="gspId" type="xs:int"/>
+      <xs:element minOccurs="0" name="losingCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="lspId" type="xs:int"/>
+      <xs:element minOccurs="0" name="som" type="tns:somData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="somData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestDateTime" type="xs:dateTime"/>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element minOccurs="0" name="status" type="tns:somStatus"/>
+      <xs:element minOccurs="0" name="statusDateTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="type" type="tns:somType"/>
+      <xs:element minOccurs="0" name="completedStateEnteredDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="somType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getServiceProviders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="companyId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getServiceProvidersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceProvidersResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="serviceProvidersResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceProviders" nillable="true" type="tns:serviceProviderData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="serviceProviderData">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectApprovedPortChange">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element name="version" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectApprovedPortChangeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCurrentUserData">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCurrentUserDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:currentUserDataResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="currentUserDataResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="access" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="carrierIds" nillable="true" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceProviderIds" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="user" type="tns:userDataExtra"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="userDataExtra">
+    <xs:complexContent>
+      <xs:extension base="tns:userData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="emailAddress" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="userData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="action" type="xs:string"/>
+      <xs:element name="active" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="companyCode" type="xs:string"/>
+      <xs:element name="companyId" type="xs:int"/>
+      <xs:element minOccurs="0" name="companyName" type="xs:string"/>
+      <xs:element minOccurs="0" name="newPassword" type="xs:string"/>
+      <xs:element minOccurs="0" name="oldPassword" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element name="profileId" type="xs:int"/>
+      <xs:element minOccurs="0" name="profileName" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="profiles" nillable="true" type="tns:profileData"/>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="profileData">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="access" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="action" type="xs:string"/>
+      <xs:element name="active" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="carriersIds" nillable="true" type="xs:int"/>
+      <xs:element name="companyId" type="xs:int"/>
+      <xs:element name="loginSessionExpiryHours" type="xs:int"/>
+      <xs:element name="maximumPasswordAttempts" type="xs:int"/>
+      <xs:element name="minimumPasswordLength" type="xs:int"/>
+      <xs:element name="passwordExpiryDays" type="xs:int"/>
+      <xs:element name="profileId" type="xs:int"/>
+      <xs:element minOccurs="0" name="profileName" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceProviderIds" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sOMEnquiry">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sOMEnquiryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:somEnquiryResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="somEnquiryResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="audits" nillable="true" type="tns:auditData"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="networkUpdates" nillable="true" type="tns:networkUpdateEnquiryDetailData"/>
+          <xs:element minOccurs="0" name="portDetail" type="tns:portEnquiryDetailData"/>
+          <xs:element minOccurs="0" name="relinquishmentDetail" type="tns:relinquishmentEnquiryDetailData"/>
+          <xs:element minOccurs="0" name="som" type="tns:somData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="auditData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="action" type="xs:string"/>
+      <xs:element minOccurs="0" name="additionalInfo" type="xs:string"/>
+      <xs:element minOccurs="0" name="apcStatus" type="xs:string"/>
+      <xs:element name="auditId" type="xs:long"/>
+      <xs:element name="companyId" type="xs:int"/>
+      <xs:element minOccurs="0" name="companyName" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateTime" type="xs:dateTime"/>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="networkUpdateEnquiryDetailData">
+    <xs:sequence>
+      <xs:element name="carrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="carrierName" type="xs:string"/>
+      <xs:element minOccurs="0" name="confirmationDateTime" type="xs:dateTime"/>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="portEnquiryDetailData">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="approvedPortChanges" nillable="true" type="tns:apcEnquiryDetailData"/>
+      <xs:element minOccurs="0" name="approvedPortDetails" type="tns:portDetailsData"/>
+      <xs:element minOccurs="0" name="portRequest" type="tns:portRequestData"/>
+      <xs:element minOccurs="0" name="portResponse" type="tns:portResponseData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="apcEnquiryDetailData">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:numberPortData"/>
+      <xs:element minOccurs="0" name="requestDateTime" type="xs:dateTime"/>
+      <xs:element name="requesterServiceProviderId" type="xs:int"/>
+      <xs:element name="responderServiceProviderId" type="xs:int"/>
+      <xs:element minOccurs="0" name="rfsDateTimeStart" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:apcStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="portDetailsData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="additionalCustomerInfo" type="xs:string"/>
+      <xs:element minOccurs="0" name="category" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerContactName" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerContactNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerExistingServiceAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerName" type="xs:string"/>
+      <xs:element minOccurs="0" name="gainingServiceProviderContact" type="xs:string"/>
+      <xs:element minOccurs="0" name="gspInternalReference" type="xs:string"/>
+      <xs:element minOccurs="0" name="lspInternalReference" type="xs:string"/>
+      <xs:element name="lspOverride" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="port" type="tns:portData"/>
+      <xs:element name="prePayPrePaid" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="rfsDateTimeStart" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="portData">
+    <xs:complexContent>
+      <xs:extension base="tns:somData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="emergencyReturnSom" type="tns:somData"/>
+          <xs:element name="gainingServiceProviderId" type="xs:int"/>
+          <xs:element name="emergencyReturn" type="xs:boolean"/>
+          <xs:element name="losingServiceProviderId" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:numberPortData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="portRequestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="additionalCustomerInfo" type="xs:string"/>
+      <xs:element minOccurs="0" name="category" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerContactName" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerContactNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerExistingServiceAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerName" type="xs:string"/>
+      <xs:element minOccurs="0" name="gainingCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="gainingServiceProviderContact" type="xs:string"/>
+      <xs:element name="gainingServiceProviderId" type="xs:int"/>
+      <xs:element minOccurs="0" name="gspInternalReference" type="xs:string"/>
+      <xs:element name="losingServiceProviderId" type="xs:int"/>
+      <xs:element name="lspOverride" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:numberPortData"/>
+      <xs:element name="prePayPrePaid" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="rfsDateTimeStart" type="xs:dateTime"/>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="relinquishmentEnquiryDetailData">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:numberRelinquishmentData"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestPort">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="portRequest" type="tns:portRequestData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestPortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="acceptApprovedPortChange">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="gainingCarriers" type="tns:numberPortData"/>
+      <xs:element name="version" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="acceptApprovedPortChangeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestRelinquishment">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" type="tns:phoneNumberData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestRelinquishmentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPortProgress">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPortProgressResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:portProgressResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="portProgressResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="portProgress" nillable="true" type="tns:portProgressData"/>
+          <xs:element minOccurs="0" name="som" type="tns:somData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="portProgressData">
+    <xs:complexContent>
+      <xs:extension base="tns:numberPortData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="progress" type="tns:numberProgressData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="numberProgressData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gainingCarrierProgress" type="xs:string"/>
+      <xs:element minOccurs="0" name="losingCarrierProgress" type="xs:string"/>
+      <xs:element minOccurs="0" name="number" type="tns:phoneNumberData"/>
+      <xs:element minOccurs="0" name="testedAndCompleteProgress" type="xs:string"/>
+      <xs:element name="version" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectPort">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectPortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestApprovedPortChange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="approvedPortChangeRequest" type="tns:apcRequestData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestApprovedPortChangeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getNetworkUpdates">
+    <xs:sequence>
+      <xs:element name="carriers" type="tns:carrierIdList"/>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element minOccurs="0" name="somType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="carrierIdList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="carrierIds" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getNetworkUpdatesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:networkUpdateListResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="networkUpdateListResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="networkUpdateList" nillable="true" type="tns:networkUpdateData"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="networkUpdateData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="confirmationDue" type="tns:durationData"/>
+      <xs:element name="confirmingCarrierId" type="xs:int"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="numbers" nillable="true" type="tns:numberNetworkUpdateData"/>
+      <xs:element minOccurs="0" name="som" type="tns:somData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="numberNetworkUpdateData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="donorCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="gainingCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="losingCarrierId" type="xs:int"/>
+      <xs:element minOccurs="0" name="number" type="tns:phoneNumberData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="submitPortResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="portResponse" type="tns:portResponseData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="submitPortResponseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="confirmNetworkUpdates">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="confirmations" type="tns:networkUpdateConfirmationData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="networkUpdateConfirmationData">
+    <xs:sequence>
+      <xs:element name="carrierId" type="xs:int"/>
+      <xs:element name="som" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="confirmNetworkUpdatesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRequestedPorts">
+    <xs:sequence>
+      <xs:element name="detail" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="statusList" type="tns:portStatus"/>
+      <xs:element minOccurs="0" name="filter" type="xs:string"/>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element minOccurs="0" name="serverDateTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="rfsToDate" type="xs:dateTime"/>
+      <xs:element name="overdueOnly" type="xs:boolean"/>
+      <xs:element name="gainingCarrierId" type="xs:int"/>
+      <xs:element name="losingCarrierId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="portStatus">
+    <xs:complexContent>
+      <xs:extension base="tns:somStatus">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getRequestedPortsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:requestedPortListResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestedPortListResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="requestedPorts" nillable="true" type="tns:requestedPortData"/>
+          <xs:element minOccurs="0" name="serverDateTime" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="requestedPortData">
+    <xs:complexContent>
+      <xs:extension base="tns:portDetailsData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actionDue" type="tns:durationData"/>
+          <xs:element name="gainingCarrierId" type="xs:int"/>
+          <xs:element minOccurs="0" name="portResponse" type="tns:portResponseData"/>
+          <xs:element name="requestRejections" type="xs:int"/>
+          <xs:element name="userGainingCarrier" type="xs:boolean"/>
+          <xs:element name="userGainingServiceProvider" type="xs:boolean"/>
+          <xs:element name="userLosingCarrier" type="xs:boolean"/>
+          <xs:element name="userLosingServiceProvider" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="updatePortProgress">
+    <xs:sequence>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="portProgress" type="tns:numberProgressData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updatePortProgressResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceOrderResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getApprovedPorts">
+    <xs:sequence>
+      <xs:element name="detail" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="statusList" type="tns:portStatus"/>
+      <xs:element minOccurs="0" name="filter" type="xs:string"/>
+      <xs:element name="som" type="xs:long"/>
+      <xs:element minOccurs="0" name="serverDateTime" type="xs:dateTime"/>
+      <xs:element name="overdueOnly" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="rfsToDate" type="xs:dateTime"/>
+      <xs:element name="gainingCarrierId" type="xs:int"/>
+      <xs:element name="losingCarrierId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getApprovedPortsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:approvedPortListResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approvedPortListResult">
+    <xs:complexContent>
+      <xs:extension base="tns:result">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="approvedPortList" nillable="true" type="tns:approvedPortData"/>
+          <xs:element minOccurs="0" name="serverDateTime" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="approvedPortData">
+    <xs:complexContent>
+      <xs:extension base="tns:portDetailsData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actionDue" type="tns:durationData"/>
+          <xs:element minOccurs="0" name="approvedPortChangeRequestDetail" type="tns:apcRequestDetailData"/>
+          <xs:element name="approvedPortChangeRequestsRemaining" type="xs:int"/>
+          <xs:element minOccurs="0" name="lastApprovedPortChange" type="tns:durationData"/>
+          <xs:element minOccurs="0" name="networkUpdatesDue" type="tns:durationData"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="outstandingNetworkUpdates" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="rfsDateTimeStartDue" type="tns:durationData"/>
+          <xs:element name="userGainingCarrier" type="xs:boolean"/>
+          <xs:element name="userGainingServiceProvider" type="xs:boolean"/>
+          <xs:element name="userLosingCarrier" type="xs:boolean"/>
+          <xs:element name="userLosingServiceProvider" type="xs:boolean"/>
+          <xs:element name="version" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="changePassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oldPassword" type="xs:string"/>
+      <xs:element minOccurs="0" name="newPassword" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="changePasswordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="completePort">
+    <wsdl:part element="tns:completePort" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="failPortResponse">
+    <wsdl:part element="tns:failPortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCarriers">
+    <wsdl:part element="tns:getCarriers" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activatePort">
+    <wsdl:part element="tns:activatePort" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="withdrawPortResponse">
+    <wsdl:part element="tns:withdrawPortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNetworkUpdatesResponse">
+    <wsdl:part element="tns:getNetworkUpdatesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changePasswordResponse">
+    <wsdl:part element="tns:changePasswordResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getApprovedPortChangeRequests">
+    <wsdl:part element="tns:getApprovedPortChangeRequests" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="numberEnquiry">
+    <wsdl:part element="tns:numberEnquiry" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCarriersResponse">
+    <wsdl:part element="tns:getCarriersResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestEmergencyReturnResponse">
+    <wsdl:part element="tns:requestEmergencyReturnResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getServiceProviders">
+    <wsdl:part element="tns:getServiceProviders" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rejectApprovedPortChangeResponse">
+    <wsdl:part element="tns:rejectApprovedPortChangeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activatePortResponse">
+    <wsdl:part element="tns:activatePortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelPortResponse">
+    <wsdl:part element="tns:cancelPortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitPortResponseResponse">
+    <wsdl:part element="tns:submitPortResponseResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sOMEnquiry">
+    <wsdl:part element="tns:sOMEnquiry" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="acceptApprovedPortChange">
+    <wsdl:part element="tns:acceptApprovedPortChange" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestRelinquishment">
+    <wsdl:part element="tns:requestRelinquishment" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPortProgress">
+    <wsdl:part element="tns:getPortProgress" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rejectPort">
+    <wsdl:part element="tns:rejectPort" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getApprovedPortChangeRequestsResponse">
+    <wsdl:part element="tns:getApprovedPortChangeRequestsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="approvePortResponse">
+    <wsdl:part element="tns:approvePortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updatePortProgressResponse">
+    <wsdl:part element="tns:updatePortProgressResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sOMEnquiryResponse">
+    <wsdl:part element="tns:sOMEnquiryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="numberEnquiryResponse">
+    <wsdl:part element="tns:numberEnquiryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmNetworkUpdates">
+    <wsdl:part element="tns:confirmNetworkUpdates" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRequestedPorts">
+    <wsdl:part element="tns:getRequestedPorts" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updatePortProgress">
+    <wsdl:part element="tns:updatePortProgress" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="acceptApprovedPortChangeResponse">
+    <wsdl:part element="tns:acceptApprovedPortChangeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getApprovedPorts">
+    <wsdl:part element="tns:getApprovedPorts" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changePassword">
+    <wsdl:part element="tns:changePassword" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCompanies">
+    <wsdl:part element="tns:getCompanies" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestEmergencyReturn">
+    <wsdl:part element="tns:requestEmergencyReturn" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sOMStatusEnquiry">
+    <wsdl:part element="tns:sOMStatusEnquiry" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="completePortResponse">
+    <wsdl:part element="tns:completePortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPortProgressResponse">
+    <wsdl:part element="tns:getPortProgressResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sOMStatusEnquiryResponse">
+    <wsdl:part element="tns:sOMStatusEnquiryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="withdrawPort">
+    <wsdl:part element="tns:withdrawPort" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="failPort">
+    <wsdl:part element="tns:failPort" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestApprovedPortChangeResponse">
+    <wsdl:part element="tns:requestApprovedPortChangeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="approvePort">
+    <wsdl:part element="tns:approvePort" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrentUserDataResponse">
+    <wsdl:part element="tns:getCurrentUserDataResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelPort">
+    <wsdl:part element="tns:cancelPort" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestPortResponse">
+    <wsdl:part element="tns:requestPortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRequestedPortsResponse">
+    <wsdl:part element="tns:getRequestedPortsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rejectApprovedPortChange">
+    <wsdl:part element="tns:rejectApprovedPortChange" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrentUserData">
+    <wsdl:part element="tns:getCurrentUserData" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestPort">
+    <wsdl:part element="tns:requestPort" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getServiceProvidersResponse">
+    <wsdl:part element="tns:getServiceProvidersResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestRelinquishmentResponse">
+    <wsdl:part element="tns:requestRelinquishmentResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestApprovedPortChange">
+    <wsdl:part element="tns:requestApprovedPortChange" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNetworkUpdates">
+    <wsdl:part element="tns:getNetworkUpdates" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitPortResponse">
+    <wsdl:part element="tns:submitPortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmNetworkUpdatesResponse">
+    <wsdl:part element="tns:confirmNetworkUpdatesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rejectPortResponse">
+    <wsdl:part element="tns:rejectPortResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getApprovedPortsResponse">
+    <wsdl:part element="tns:getApprovedPortsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCompaniesResponse">
+    <wsdl:part element="tns:getCompaniesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IServiceOrder">
+    <wsdl:operation name="getCompanies">
+      <wsdl:input message="tns:getCompanies" name="getCompanies">
+    </wsdl:input>
+      <wsdl:output message="tns:getCompaniesResponse" name="getCompaniesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="completePort">
+      <wsdl:input message="tns:completePort" name="completePort">
+    </wsdl:input>
+      <wsdl:output message="tns:completePortResponse" name="completePortResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCarriers">
+      <wsdl:input message="tns:getCarriers" name="getCarriers">
+    </wsdl:input>
+      <wsdl:output message="tns:getCarriersResponse" name="getCarriersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestEmergencyReturn">
+      <wsdl:input message="tns:requestEmergencyReturn" name="requestEmergencyReturn">
+    </wsdl:input>
+      <wsdl:output message="tns:requestEmergencyReturnResponse" name="requestEmergencyReturnResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sOMStatusEnquiry">
+      <wsdl:input message="tns:sOMStatusEnquiry" name="sOMStatusEnquiry">
+    </wsdl:input>
+      <wsdl:output message="tns:sOMStatusEnquiryResponse" name="sOMStatusEnquiryResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activatePort">
+      <wsdl:input message="tns:activatePort" name="activatePort">
+    </wsdl:input>
+      <wsdl:output message="tns:activatePortResponse" name="activatePortResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApprovedPortChangeRequests">
+      <wsdl:input message="tns:getApprovedPortChangeRequests" name="getApprovedPortChangeRequests">
+    </wsdl:input>
+      <wsdl:output message="tns:getApprovedPortChangeRequestsResponse" name="getApprovedPortChangeRequestsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="withdrawPort">
+      <wsdl:input message="tns:withdrawPort" name="withdrawPort">
+    </wsdl:input>
+      <wsdl:output message="tns:withdrawPortResponse" name="withdrawPortResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="failPort">
+      <wsdl:input message="tns:failPort" name="failPort">
+    </wsdl:input>
+      <wsdl:output message="tns:failPortResponse" name="failPortResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approvePort">
+      <wsdl:input message="tns:approvePort" name="approvePort">
+    </wsdl:input>
+      <wsdl:output message="tns:approvePortResponse" name="approvePortResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelPort">
+      <wsdl:input message="tns:cancelPort" name="cancelPort">
+    </wsdl:input>
+      <wsdl:output message="tns:cancelPortResponse" name="cancelPortResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numberEnquiry">
+      <wsdl:input message="tns:numberEnquiry" name="numberEnquiry">
+    </wsdl:input>
+      <wsdl:output message="tns:numberEnquiryResponse" name="numberEnquiryResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceProviders">
+      <wsdl:input message="tns:getServiceProviders" name="getServiceProviders">
+    </wsdl:input>
+      <wsdl:output message="tns:getServiceProvidersResponse" name="getServiceProvidersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rejectApprovedPortChange">
+      <wsdl:input message="tns:rejectApprovedPortChange" name="rejectApprovedPortChange">
+    </wsdl:input>
+      <wsdl:output message="tns:rejectApprovedPortChangeResponse" name="rejectApprovedPortChangeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentUserData">
+      <wsdl:input message="tns:getCurrentUserData" name="getCurrentUserData">
+    </wsdl:input>
+      <wsdl:output message="tns:getCurrentUserDataResponse" name="getCurrentUserDataResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sOMEnquiry">
+      <wsdl:input message="tns:sOMEnquiry" name="sOMEnquiry">
+    </wsdl:input>
+      <wsdl:output message="tns:sOMEnquiryResponse" name="sOMEnquiryResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestPort">
+      <wsdl:input message="tns:requestPort" name="requestPort">
+    </wsdl:input>
+      <wsdl:output message="tns:requestPortResponse" name="requestPortResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptApprovedPortChange">
+      <wsdl:input message="tns:acceptApprovedPortChange" name="acceptApprovedPortChange">
+    </wsdl:input>
+      <wsdl:output message="tns:acceptApprovedPortChangeResponse" name="acceptApprovedPortChangeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestRelinquishment">
+      <wsdl:input message="tns:requestRelinquishment" name="requestRelinquishment">
+    </wsdl:input>
+      <wsdl:output message="tns:requestRelinquishmentResponse" name="requestRelinquishmentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPortProgress">
+      <wsdl:input message="tns:getPortProgress" name="getPortProgress">
+    </wsdl:input>
+      <wsdl:output message="tns:getPortProgressResponse" name="getPortProgressResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rejectPort">
+      <wsdl:input message="tns:rejectPort" name="rejectPort">
+    </wsdl:input>
+      <wsdl:output message="tns:rejectPortResponse" name="rejectPortResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestApprovedPortChange">
+      <wsdl:input message="tns:requestApprovedPortChange" name="requestApprovedPortChange">
+    </wsdl:input>
+      <wsdl:output message="tns:requestApprovedPortChangeResponse" name="requestApprovedPortChangeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNetworkUpdates">
+      <wsdl:input message="tns:getNetworkUpdates" name="getNetworkUpdates">
+    </wsdl:input>
+      <wsdl:output message="tns:getNetworkUpdatesResponse" name="getNetworkUpdatesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitPortResponse">
+      <wsdl:input message="tns:submitPortResponse" name="submitPortResponse">
+    </wsdl:input>
+      <wsdl:output message="tns:submitPortResponseResponse" name="submitPortResponseResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmNetworkUpdates">
+      <wsdl:input message="tns:confirmNetworkUpdates" name="confirmNetworkUpdates">
+    </wsdl:input>
+      <wsdl:output message="tns:confirmNetworkUpdatesResponse" name="confirmNetworkUpdatesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestedPorts">
+      <wsdl:input message="tns:getRequestedPorts" name="getRequestedPorts">
+    </wsdl:input>
+      <wsdl:output message="tns:getRequestedPortsResponse" name="getRequestedPortsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePortProgress">
+      <wsdl:input message="tns:updatePortProgress" name="updatePortProgress">
+    </wsdl:input>
+      <wsdl:output message="tns:updatePortProgressResponse" name="updatePortProgressResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApprovedPorts">
+      <wsdl:input message="tns:getApprovedPorts" name="getApprovedPorts">
+    </wsdl:input>
+      <wsdl:output message="tns:getApprovedPortsResponse" name="getApprovedPortsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <wsdl:input message="tns:changePassword" name="changePassword">
+    </wsdl:input>
+      <wsdl:output message="tns:changePasswordResponse" name="changePasswordResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceOrderServiceSoapBinding" type="tns:IServiceOrder">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCompanies">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCompanies">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCompaniesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="completePort">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="completePort">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completePortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCarriers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCarriers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCarriersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestEmergencyReturn">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="requestEmergencyReturn">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestEmergencyReturnResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sOMStatusEnquiry">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sOMStatusEnquiry">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sOMStatusEnquiryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activatePort">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="activatePort">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activatePortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApprovedPortChangeRequests">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getApprovedPortChangeRequests">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getApprovedPortChangeRequestsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="withdrawPort">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="withdrawPort">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="withdrawPortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="failPort">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="failPort">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="failPortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approvePort">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="approvePort">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="approvePortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelPort">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cancelPort">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelPortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numberEnquiry">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="numberEnquiry">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="numberEnquiryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceProviders">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getServiceProviders">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServiceProvidersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rejectApprovedPortChange">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="rejectApprovedPortChange">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rejectApprovedPortChangeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentUserData">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCurrentUserData">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCurrentUserDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sOMEnquiry">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sOMEnquiry">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sOMEnquiryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestPort">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="requestPort">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestPortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptApprovedPortChange">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="acceptApprovedPortChange">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="acceptApprovedPortChangeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestRelinquishment">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="requestRelinquishment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestRelinquishmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPortProgress">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPortProgress">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPortProgressResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rejectPort">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="rejectPort">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rejectPortResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestApprovedPortChange">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="requestApprovedPortChange">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestApprovedPortChangeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNetworkUpdates">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getNetworkUpdates">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNetworkUpdatesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitPortResponse">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="submitPortResponse">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitPortResponseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmNetworkUpdates">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="confirmNetworkUpdates">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="confirmNetworkUpdatesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestedPorts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRequestedPorts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRequestedPortsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePortProgress">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updatePortProgress">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updatePortProgressResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApprovedPorts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getApprovedPorts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getApprovedPortsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="changePassword">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changePasswordResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceOrderService">
+    <wsdl:port binding="tns:ServiceOrderServiceSoapBinding" name="ServiceOrderPort">
+      <soap:address location="https://ipms-train.tcf.org.nz/apiv2/services/service-order-003"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
