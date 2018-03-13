@@ -35,5 +35,5 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 
 For a basic example, look at the [example.py](example.py) script.
 
-Simply change the Username, Password, and Carrier ID fields to something valid, and run the script to connect to TNAS
+Simply change the Username, Password, and Carrier ID fields to something valid, and run the script to connect to IPMS
 
