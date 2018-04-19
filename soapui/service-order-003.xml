@@ -1524,7 +1524,24 @@
          <version>?</version>\r
       </tran:acceptApprovedPortChange>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/acceptApprovedPortChange"/></con:call></con:operation><con:operation id="18dd6c80-60a1-445f-bfcf-53e2b2aadd80" isOneWay="false" action="" name="activatePort" bindingOperationName="activatePort" type="Request-Response" outputName="activatePortResponse" inputName="activatePort" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f6dbe070-5b85-4f1e-88fc-bb9031cbbf94" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/acceptApprovedPortChange"/><con:wsrmConfig version="1.2"/></con:call><con:call id="578bd2ba-615a-4b6e-9b29-8ad92bb763f8" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-test.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap-env:Body>
+		<ns0:acceptApprovedPortChange xmlns:ns0="http://transferobjects.ipms.tcf.org.nz">
+			<som>789929</som>
+			<gainingCarriers>
+				<complete>false</complete>
+				<gainingCarrierId>99947</gainingCarrierId>
+				<handsetReference />
+				<losingCarrierId>11987</losingCarrierId>
+				<notRequired>false</notRequired>
+				<phoneNumber>
+					<phoneNumber>099500000</phoneNumber>
+				</phoneNumber>
+			</gainingCarriers>
+			<version>1</version>
+		</ns0:acceptApprovedPortChange>
+	</soap-env:Body>
+</soap-env:Envelope>]]></con:request><con:credentials><con:username>VNGS_API_TEST</con:username><con:password>2XfuqUi6XrgU</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/acceptApprovedPortChange"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="18dd6c80-60a1-445f-bfcf-53e2b2aadd80" isOneWay="false" action="" name="activatePort" bindingOperationName="activatePort" type="Request-Response" outputName="activatePortResponse" inputName="activatePort" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f6dbe070-5b85-4f1e-88fc-bb9031cbbf94" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tran:activatePort>\r
@@ -1571,7 +1588,7 @@
          <gspRFSDateTimeStart>?</gspRFSDateTimeStart>\r
       </tran:approvePort>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/approvePort"/></con:call></con:operation><con:operation id="6a4f8a60-60f6-443d-a018-383994a53eb4" isOneWay="false" action="" name="cancelPort" bindingOperationName="cancelPort" type="Request-Response" outputName="cancelPortResponse" inputName="cancelPort" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="56b809c8-d394-4437-b453-0d72df57300b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/approvePort"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6a4f8a60-60f6-443d-a018-383994a53eb4" isOneWay="false" action="" name="cancelPort" bindingOperationName="cancelPort" type="Request-Response" outputName="cancelPortResponse" inputName="cancelPort" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="56b809c8-d394-4437-b453-0d72df57300b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tran:cancelPort>\r
@@ -1630,7 +1647,7 @@
          <overdueOnly>?</overdueOnly>\r
       </tran:getApprovedPortChangeRequests>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getApprovedPortChangeRequests"/></con:call></con:operation><con:operation id="1a3d316c-3db0-48ec-aafc-d59fa3c19eb6" isOneWay="false" action="" name="getApprovedPorts" bindingOperationName="getApprovedPorts" type="Request-Response" outputName="getApprovedPortsResponse" inputName="getApprovedPorts" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ace66493-bcf6-4346-b968-44cda3717f0d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getApprovedPortChangeRequests"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1a3d316c-3db0-48ec-aafc-d59fa3c19eb6" isOneWay="false" action="" name="getApprovedPorts" bindingOperationName="getApprovedPorts" type="Request-Response" outputName="getApprovedPortsResponse" inputName="getApprovedPorts" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ace66493-bcf6-4346-b968-44cda3717f0d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tran:getApprovedPorts>\r
@@ -1660,12 +1677,12 @@
          <companyId>?</companyId>\r
       </tran:getCarriers>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getCarriers"/></con:call></con:operation><con:operation id="c6780922-cbfa-4575-91ee-9d7b84d8539c" isOneWay="false" action="" name="getCompanies" bindingOperationName="getCompanies" type="Request-Response" outputName="getCompaniesResponse" inputName="getCompanies" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a2cd7d71-74ee-4f6e-bb26-e07b67c44f76" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getCarriers"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c6780922-cbfa-4575-91ee-9d7b84d8539c" isOneWay="false" action="" name="getCompanies" bindingOperationName="getCompanies" type="Request-Response" outputName="getCompaniesResponse" inputName="getCompanies" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a2cd7d71-74ee-4f6e-bb26-e07b67c44f76" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tran:getCompanies/>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getCompanies"/></con:call></con:operation><con:operation id="a42d0bad-a1a8-4e78-b593-ab0a78e4f6b1" isOneWay="false" action="" name="getCurrentUserData" bindingOperationName="getCurrentUserData" type="Request-Response" outputName="getCurrentUserDataResponse" inputName="getCurrentUserData" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a388e979-262a-45b7-b3ec-a4022558f28a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getCompanies"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a42d0bad-a1a8-4e78-b593-ab0a78e4f6b1" isOneWay="false" action="" name="getCurrentUserData" bindingOperationName="getCurrentUserData" type="Request-Response" outputName="getCurrentUserDataResponse" inputName="getCurrentUserData" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a388e979-262a-45b7-b3ec-a4022558f28a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tran:getCurrentUserData/>\r
@@ -1683,7 +1700,7 @@
          <somType>?</somType>\r
       </tran:getNetworkUpdates>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getNetworkUpdates"/></con:call></con:operation><con:operation id="e9d1e864-af4e-4bf0-854b-dff5f867f7e2" isOneWay="false" action="" name="getPortProgress" bindingOperationName="getPortProgress" type="Request-Response" outputName="getPortProgressResponse" inputName="getPortProgress" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="10f70007-c1ed-4bd6-afe7-326991f0696f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getNetworkUpdates"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e9d1e864-af4e-4bf0-854b-dff5f867f7e2" isOneWay="false" action="" name="getPortProgress" bindingOperationName="getPortProgress" type="Request-Response" outputName="getPortProgressResponse" inputName="getPortProgress" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="10f70007-c1ed-4bd6-afe7-326991f0696f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tran:getPortProgress>\r
@@ -1712,7 +1729,38 @@
          <losingCarrierId>?</losingCarrierId>\r
       </tran:getRequestedPorts>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getRequestedPorts"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cccbed8d-90a1-4b58-a038-25b5d29f2f60" isOneWay="false" action="" name="getServiceProviders" bindingOperationName="getServiceProviders" type="Request-Response" outputName="getServiceProvidersResponse" inputName="getServiceProviders" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="95ef536f-c90d-447f-b218-6da82e7acdc7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getRequestedPorts"/><con:wsrmConfig version="1.2"/></con:call><con:call id="585c77a8-e09a-4ba3-b4ee-8eeb9bf25717" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-test.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap-env:Body>
+		<ns0:getRequestedPorts xmlns:ns0="http://transferobjects.ipms.tcf.org.nz">
+			<detail>true</detail>
+			<statusList>
+				<status>Awaiting LSP Response</status>
+			</statusList>
+			<statusList>
+				<status>Awaiting GSP Approval</status>
+			</statusList>
+			<statusList>
+				<status>Approved</status>
+			</statusList>
+			<statusList>
+				<status>Rejected</status>
+			</statusList>
+			<statusList>
+				<status>Cancelled</status>
+			</statusList>
+			<statusList>
+				<status>Request Expired</status>
+			</statusList>
+			<filter>All</filter>
+			<som>0</som>
+			
+			<rfsToDate>2018-04-26T11:59:48.539028</rfsToDate>
+			<overdueOnly>false</overdueOnly>
+			<gainingCarrierId>0</gainingCarrierId>
+			<losingCarrierId>0</losingCarrierId>
+		</ns0:getRequestedPorts>
+	</soap-env:Body>
+</soap-env:Envelope>]]></con:request><con:credentials><con:username>API_WxC$6</con:username><con:password>wxcjune12</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getRequestedPorts"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5964f74d-c8c0-4812-94e8-0c56f05e753e" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-test.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request/><con:credentials><con:username>API_WxC$6</con:username><con:password>wxcjune12</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/getRequestedPorts"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cccbed8d-90a1-4b58-a038-25b5d29f2f60" isOneWay="false" action="" name="getServiceProviders" bindingOperationName="getServiceProviders" type="Request-Response" outputName="getServiceProvidersResponse" inputName="getServiceProviders" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="95ef536f-c90d-447f-b218-6da82e7acdc7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://ipms-train.tcf.org.nz/apiv2/services/service-order-003</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://transferobjects.ipms.tcf.org.nz">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tran:getServiceProviders>\r
@@ -1952,4 +2000,4 @@ nt></errorInfo></error><data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instanc
          <som>?</som>\r
       </tran:withdrawPort>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/withdrawPort"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://transferobjects.ipms.tcf.org.nz/IServiceOrder/withdrawPort"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

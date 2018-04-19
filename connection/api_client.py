@@ -2,7 +2,7 @@
 # from urllib import request
 # import xml.etree.ElementTree as ET
 
-import datetime
+import datetime, calendar
 import logging.config
 from requests import Session
 from requests.auth import HTTPBasicAuth  # or HTTPDigestAuth, or OAuth1, etc.
@@ -24,6 +24,9 @@ class IPMSConnection:
 
         session = Session()
         session.auth = HTTPBasicAuth('{}${}'.format(username, company_id), password)
+
+        session.verify = False #Uncomment this to disable SSL Certificate verification
+
         self.service_order_003 = zeep.Client('https://ipms-{}.tcf.org.nz/apiv2/services/service-order-003?wsdl'.format(self.ipms_interface), transport=Transport(session=session))
 
         # Output a list of the available Functions from the imported WSDL
@@ -87,6 +90,13 @@ class IPMSConnection:
             raise Exception('Invalid or Empty HTTP Response')
         return success
 
+    def add_months(self, sourcedate, months):
+        month = sourcedate.month - 1 + months
+        year = sourcedate.year + month // 12
+        month = month % 12 + 1
+        day = min(sourcedate.day, calendar.monthrange(year, month)[1])
+        return datetime.date(year, month, day)
+
     # IPMS Function Wrappers
     def get_companies(self):
         print("Get Companies")
@@ -121,14 +131,14 @@ class IPMSConnection:
     def number_enquiry(self, number):
         print("Number Enquiry: " + number)
         response = self.service_order_003.service.numberEnquiry(number)
-        if self.check_response(response):
-            return response
+        self.check_response(response)
+        return response
 
     def som_enquiry(self, som):
         print("SOM Enquiry: " + str(som))
         response = self.service_order_003.service.sOMEnquiry(som)
-        if self.check_response(response):
-            return response
+        self.check_response(response)
+        return response
 
     def get_requested_ports(self, params=None):
         print("Get Requested Ports")
@@ -165,8 +175,10 @@ class IPMSConnection:
                                                                     default_params['gainingCarrierId'],
                                                                     default_params['losingCarrierId'])
 
-        if self.check_response(response):
-            return response['requestedPorts']
+        self.check_response(response)
+        return response
+
+
 
     def request_port(self, params=None):
         print("Port Request")
@@ -203,7 +215,7 @@ class IPMSConnection:
                             'handsetReference': '',
                             'losingCarrierId': '',
                             'notRequired': '',
-                            'phoneNumber ': {
+                            'phoneNumber': {
                                 'phoneNumber': ''
                             }
                         }
@@ -211,11 +223,230 @@ class IPMSConnection:
                         for number_param, number_param_value in number.items():
                             default_number_params[number_param] = number_param_value
 
-                        default_params['numbers'] = default_number_params
+                        default_params['numbers'].append(default_number_params)
 
                 else:
                     default_params[param_name] = param_value
 
         response = self.service_order_003.service.requestPort(default_params)
-        if self.check_response(response):
-            return response
+        self.check_response(response)
+        return response
+
+
+    def submit_port_response(self, params=None):
+        print("Submit Port Response")
+
+        default_params = {
+            'accountNumber': '',
+            'accountNumberIncorrect': False,
+            'category': 'Simple',
+            'customerName': '',
+            'losingServiceProviderIncorrect': False,
+            'lspInternalReference': '',
+            'lspOverride': False,
+            'numbers': [],
+            'prePayPrePaid': False,
+            'som': 0
+        }
+
+        if params is not None:
+            for param_name, param_value in params.items():
+
+                if param_name == 'numbers':
+                    for number in param_value:
+
+                        default_number_params = {
+                            'complete': False,
+                            'gainingCarrierId': 0,
+                            'handsetReference': '',
+                            'losingCarrierId': '',
+                            'notRequired': '',
+                            'phoneNumber': {
+                                'phoneNumber': ''
+                            }
+                        }
+
+                        for number_param, number_param_value in number.items():
+                            default_number_params[number_param] = number_param_value
+
+                        default_params['numbers'].append(default_number_params)
+
+                else:
+                    default_params[param_name] = param_value
+
+        response = self.service_order_003.service.submitPortResponse(default_params)
+        self.check_response(response)
+        return response
+
+    def approve_port(self, params=None):
+        print("Approve Port")
+
+        default_params = {
+            'accountNumber': '',
+            'accountNumberIncorrect': False,
+            'category': 'Simple',
+            'customerName': '',
+            'losingServiceProviderIncorrect': False,
+            'lspInternalReference': '',
+            'lspOverride': False,
+            'numbers': [],
+            'prePayPrePaid': False,
+            'som': 0
+        }
+
+        if params is not None:
+            for param_name, param_value in params.items():
+
+                if param_name == 'numbers':
+                    for number in param_value:
+
+                        default_number_params = {
+                            'complete': False,
+                            'gainingCarrierId': 0,
+                            'handsetReference': '',
+                            'losingCarrierId': '',
+                            'notRequired': '',
+                            'phoneNumber': {
+                                'phoneNumber': ''
+                            }
+                        }
+
+                        for number_param, number_param_value in number.items():
+                            default_number_params[number_param] = number_param_value
+
+                        default_params['numbers'].append(default_number_params)
+
+                else:
+                    default_params[param_name] = param_value
+
+        response = self.service_order_003.service.approvePort(default_params)
+        self.check_response(response)
+        return response
+
+
+    def request_approved_port_change(self, params=None):
+        print("Request Approved Port Change")
+
+        default_params = {
+            'lspOverride': False,
+            'numbers': [],
+            'rfsDateTimeStart': datetime.datetime.now(),
+            'som': 0
+        }
+
+        if params is not None:
+            for param_name, param_value in params.items():
+
+                if param_name == 'numbers':
+                    for number in param_value:
+
+                        default_number_params = {
+                            'complete': False,
+                            'gainingCarrierId': 0,
+                            'handsetReference': '',
+                            'losingCarrierId': '',
+                            'notRequired': '',
+                            'phoneNumber': {
+                                'phoneNumber': ''
+                            }
+                        }
+
+                        for number_param, number_param_value in number.items():
+                            default_number_params[number_param] = number_param_value
+
+                        default_params['numbers'].append(default_number_params)
+
+                else:
+                    default_params[param_name] = param_value
+
+        response = self.service_order_003.service.requestApprovedPortChange(default_params)
+        self.check_response(response)
+        return response
+
+    def get_approved_port_change_requests(self, params=None):
+        print("Get Approved Port Change Requests")
+
+        default_params = {
+            'som': 0,
+            'statusList': [
+                {
+                    'status': 'Awaiting APC Approval'
+                }
+            ],
+            'filter': 'My SP Action',
+            'rfsToDate': self.add_months(datetime.datetime.now(), 3),
+            'overdueOnly': False
+        }
+
+        if params is not None:
+            for param_name, param_value in params.items():
+
+                if param_name == 'statusList':
+                     default_params['statusList'].append(param_value)
+                else:
+                    default_params[param_name] = param_value
+
+        response = self.service_order_003.service.getApprovedPortChangeRequests(default_params['som'],
+                                                                    default_params['statusList'],
+                                                                    default_params['filter'],
+                                                                    default_params['rfsToDate'],
+                                                                    default_params['overdueOnly'])
+
+        self.check_response(response)
+        return response
+
+    def accept_approved_port_change_request(self, params=None):
+        print("Accept Approved Port Change Request")
+
+        default_params = {
+            'som': 0,
+            'gainingCarriers': [],
+            'version': 0
+        }
+
+        if params is not None:
+            for param_name, param_value in params.items():
+
+                if param_name == 'gainingCarriers':
+                    for number in param_value:
+
+                        default_number_params = {
+                            'complete': False,
+                            'gainingCarrierId': 0,
+                            'handsetReference': '',
+                            'losingCarrierId': '',
+                            'notRequired': '',
+                            'phoneNumber': {
+                                'phoneNumber': ''
+                            }
+                        }
+
+                        for number_param, number_param_value in number.items():
+                            default_number_params[number_param] = number_param_value
+
+                        default_params['gainingCarriers'].append(default_number_params)
+
+                else:
+                    default_params[param_name] = param_value
+
+        response = self.service_order_003.service.acceptApprovedPortChange(default_params['som'], default_params['gainingCarriers'], default_params['version'])
+        self.check_response(response)
+        return response
+
+    def activate_port(self, params):
+        print("Activate Port")
+        response = self.service_order_003.service.activatePort(params['som'])
+        self.check_response(response)
+        return response
+
+
+    def get_port_progress(self, params):
+        print("Get Port Progress")
+        response = self.service_order_003.service.getPortProgress(params['som'])
+        self.check_response(response)
+        return response
+
+        # ns0: getPortProgress(ns0:getPortProgress)
+        # ns0: getPortProgress(som: xsd: long)
+
+        # ns0: portProgressResult(errors: ns0: errorData[], success: xsd:boolean, portProgress: ns0:portProgressData[], som: ns0:somData)

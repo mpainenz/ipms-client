@@ -4,10 +4,11 @@ import datetime
 
 # This file contains some basic examples of function calls to IPMS and how to create a Connection object.
 
-username = 'wxc'
-password = ''
+username = 'VNGS_API_TEST'
+password = '2XfuqUi6XrgU'
 company_id = '6'
 carrier_id = 11987
+service_provider_id = 19
 
 # log HTTP and SOAP requests/responses to console
 log_http_detail = True
@@ -15,7 +16,7 @@ log_http_detail = True
 # Create an IPMS Connection Object. This is used to Communicate to IPMS through the SOAP API
 # When created, it will immediately:     1. Import the WSDL file and output the available types and functions which IPMS provides
 #                                        2. Call getCompanies, getCarriers, getServiceProviders, and save them for later access
-ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN,
+ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TEST,
                                             username=username,
                                             password=password,
                                             company_id=company_id,
@@ -29,9 +30,9 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 # print(som_info['portDetail'])
 
 # Example Get Requested Ports
-requested_ports = ipms_connection.get_requested_ports({})
-for port in requested_ports:
-    print(port)
+# requested_ports = ipms_connection.get_requested_ports({})
+# for port in requested_ports:
+#     print(port)
     # print(port['port']['som']) # Get a specific field like this
 
 # Example Port Request
@@ -43,24 +44,36 @@ for port in requested_ports:
 #     'customerContactNumber': '',
 #     'customerExistingServiceAddress': '',
 #     'customerName': 'test',
-#     'gainingCarrierId': '',
+#     'gainingCarrierId': carrier_id,
 #     'gainingServiceProviderContact': '',
-#     'gainingServiceProviderId': 9,
+#     'gainingServiceProviderId': service_provider_id,
 #     'gspInternalReference': '',
-#     'losingServiceProviderId': 9,
+#     'losingServiceProviderId': 106,
 #     'lspOverride': False,
 #
 #     'numbers': [
 #         {
 #             'complete': False,
-#             'gainingCarrierId': 6,
+#             'gainingCarrierId': carrier_id,
 #             'handsetReference': '',
-#             'losingCarrierId': '',
+#             'losingCarrierId': 99947,
 #             'notRequired': '',
-#             'number ': {
-#                 'phoneNumber': '091234567'
+#             'phoneNumber': {
+#                 'phoneNumber': '099500000'
+#             }
+#         },
+#
+#         {
+#             'complete': False,
+#             'gainingCarrierId': carrier_id,
+#             'handsetReference': '',
+#             'losingCarrierId': 99947,
+#             'notRequired': '',
+#             'phoneNumber': {
+#                 'phoneNumber': '099500001'
 #             }
 #         }
+#
 #     ],
 #
 #     'rfsDateTimeStart': datetime.datetime.now(),
