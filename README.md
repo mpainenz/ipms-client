@@ -1,8 +1,14 @@
-# IPMS Client
+# Python IPMS Client
 
-The [Industry Portability Management System](https://www.tcf.org.nz/industry/numbering/number-portability/access-to-ipms/) is a government regulated service provided to New Zealand Carriers and Service provider Companies in order to Port telephone numbers between members. Number Portability allows New Zealand consumbers to keep ownership of their Telephone numbers when changing Service Providers.
+## What is IPMS?
 
-This project contains a very simple, easy to use, IPMS API Client written in Python 3.6. This project will enable an IPMS user to connect to, and perform function calls against the IPMS SOAP Service.
+The [Industry Portability Management System](https://www.tcf.org.nz/industry/numbering/number-portability/access-to-ipms/) is a government regulated service provided to New Zealand Carriers and Service provider Companies in order to Port telephone numbers between members. 
+
+Number Portability allows New Zealand consumers to keep ownership of their Telephone numbers when changing Service Providers.
+
+## About this project
+
+This project contains a very simple, easy to use, IPMS API Client written in Python 3.6. This project will enable an IPMS user to connect to, and perform function calls against the IPMS SOAP Service. This project was initially created to test the latest API functionality introduced in 2018, however it could also be extended to provide other functionality such as automated email alerting.
 
 This library supports TLS1.2 SSL.
 
