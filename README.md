@@ -31,33 +31,33 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 | acceptApprovedPortChange | :white_check_mark: Implemented |
 | activatePort | :white_check_mark: Implemented |
 | approvePort | :white_check_mark: Implemented |
-| cancelPort | :x: Not Implemented |
-| changePassword | :x: Not Implemented |
+| cancelPort | :x: TBC |
+| changePassword | :x: TBC |
 | completePort | :white_check_mark: Implemented |
 | confirmNetworkUpdates | :white_check_mark: Implemented |
-| failPort | :x: Not Implemented |
+| failPort | :x: TBC |
 | getApprovedPortChangeRequests | :white_check_mark: Implemented |
 | getApprovedPorts | :white_check_mark: Implemented |
 | getCarriers | :white_check_mark: Implemented |
 | getCompanies | :white_check_mark: Implemented |
-| getCurrentUserData | :x: Not Implemented |
+| getCurrentUserData | :x: TBC |
 | getNetworkUpdates | :white_check_mark: Implemented |
 | getPortProgress | :white_check_mark: Implemented |
 | getRequestedPorts | :white_check_mark: Implemented |
 | getServiceProviders | :white_check_mark: Implemented |
 | numberEnquiry | :white_check_mark: Implemented |
-| rejectApprovedPortChange | :x: Not Implemented |
-| rejectPort | :x: Not Implemented |
+| rejectApprovedPortChange | :x: TBC |
+| rejectPort | :x: TBC |
 | requestApprovedPortChange | :white_check_mark: Implemented |
-| requestEmergencyReturn | :x: Not Implemented |
+| requestEmergencyReturn | :x: TBC |
 | requestPort | :white_check_mark: Implemented |
-| requestRelinquishment | :x: Not Implemented |
-| sOMEnquiry | :x: Not Implemented |
-| sOMStatusEnquiry | :x: Not Implemented |
+| requestRelinquishment | :x: TBC |
+| sOMEnquiry | :x: TBC |
+| sOMStatusEnquiry | :x: TBC |
 | submitPortResponse | :white_check_mark: Implemented |
 | updatePortProgress | :white_check_mark: Implemented |
-| version | :x: Not Implemented |
-| withdrawPort | :x: Not Implemented |
+| version | :x: TBC |
+| withdrawPort | :x: TBC |
 
 
 # Installation
