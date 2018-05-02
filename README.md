@@ -31,33 +31,33 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 | acceptApprovedPortChange | :white_check_mark: Implemented |
 | activatePort | :white_check_mark: Implemented |
 | approvePort | :white_check_mark: Implemented |
-| cancelPort | :x: TBC |
-| changePassword | :x: TBC |
+| cancelPort | :heavy_minus_sign: TBC |
+| changePassword | :heavy_minus_sign: TBC |
 | completePort | :white_check_mark: Implemented |
 | confirmNetworkUpdates | :white_check_mark: Implemented |
-| failPort | :x: TBC |
+| failPort | :heavy_minus_sign: TBC |
 | getApprovedPortChangeRequests | :white_check_mark: Implemented |
 | getApprovedPorts | :white_check_mark: Implemented |
 | getCarriers | :white_check_mark: Implemented |
 | getCompanies | :white_check_mark: Implemented |
-| getCurrentUserData | :x: TBC |
+| getCurrentUserData | :heavy_minus_sign: TBC |
 | getNetworkUpdates | :white_check_mark: Implemented |
 | getPortProgress | :white_check_mark: Implemented |
 | getRequestedPorts | :white_check_mark: Implemented |
 | getServiceProviders | :white_check_mark: Implemented |
 | numberEnquiry | :white_check_mark: Implemented |
-| rejectApprovedPortChange | :x: TBC |
-| rejectPort | :x: TBC |
+| rejectApprovedPortChange | :heavy_minus_sign: TBC |
+| rejectPort | :heavy_minus_sign: TBC |
 | requestApprovedPortChange | :white_check_mark: Implemented |
-| requestEmergencyReturn | :x: TBC |
+| requestEmergencyReturn | :heavy_minus_sign: TBC |
 | requestPort | :white_check_mark: Implemented |
-| requestRelinquishment | :x: TBC |
-| sOMEnquiry | :x: TBC |
-| sOMStatusEnquiry | :x: TBC |
+| requestRelinquishment | :heavy_minus_sign: TBC |
+| sOMEnquiry | :heavy_minus_sign: TBC |
+| sOMStatusEnquiry | :heavy_minus_sign: TBC |
 | submitPortResponse | :white_check_mark: Implemented |
 | updatePortProgress | :white_check_mark: Implemented |
-| version | :x: TBC |
-| withdrawPort | :x: TBC |
+| version | :heavy_minus_sign: TBC |
+| withdrawPort | :heavy_minus_sign: TBC |
 
 
 # Installation
