@@ -2,11 +2,12 @@
 # from urllib import request
 # import xml.etree.ElementTree as ET
 
-import datetime, calendar
+import datetime, calendar, copy, json
 import logging.config
 from requests import Session
 from requests.auth import HTTPBasicAuth  # or HTTPDigestAuth, or OAuth1, etc.
 from zeep.transports import Transport
+from zeep import helpers
 
 import zeep
 
@@ -25,7 +26,7 @@ class IPMSConnection:
         session = Session()
         session.auth = HTTPBasicAuth('{}${}'.format(username, company_id), password)
 
-        session.verify = False #Uncomment this to disable SSL Certificate verification
+        # session.verify = False #Uncomment this to disable SSL Certificate verification
 
         self.service_order_003 = zeep.Client('https://ipms-{}.tcf.org.nz/apiv2/services/service-order-003?wsdl'.format(self.ipms_interface), transport=Transport(session=session))
 
@@ -78,24 +79,65 @@ class IPMSConnection:
         print("Finished Loading IPMS Objects".format(self.ipms_interface))
 
     def check_response(self, response):
-        success = (response is not None) and (response['success'] is not None)
+        success = (response is not None)
         if success:
-            success = response['success']
-            if not success:
-                for error in response['errors']:
-                    print('IPMS Error - {} ({}): {}'.format(error['error']['mnemonic'], error['error']['code'], error['error']['description']))
-                    print('   - Name: {}, Value: {}'.format(error['name'], error['value']))
-                    print()
+
+            if type(response) == list:
+                for item in response:
+                   success = success and self.evaluate_response(item)
+
+            else:
+                success = self.evaluate_response(response)
+
         else:
             raise Exception('Invalid or Empty HTTP Response')
         return success
 
+    def evaluate_response(self, response):
+        success = response['success']
+        if not success:
+            for error in response['errors']:
+                print('IPMS Error - {} ({}): {}'.format(error['error']['mnemonic'], error['error']['code'], error['error']['description']))
+                print('   - Name: {}, Value: {}'.format(error['name'], error['value']))
+                print()
+        return success
+
+    def deserialize_zeep_object(self, obj):
+        input_dict = helpers.serialize_object(obj)
+        return json.loads(json.dumps(input_dict))
+
+    # General Functions (Used to simplify Python related code)
     def add_months(self, sourcedate, months):
         month = sourcedate.month - 1 + months
         year = sourcedate.year + month // 12
         month = month % 12 + 1
         day = min(sourcedate.day, calendar.monthrange(year, month)[1])
         return datetime.date(year, month, day)
+
+    # This function is used to copy params that a user provides, and apply them against the default_params which are used if the user does not specify a particular param.
+    def recursive_update(self, target, src):
+
+        for k, v in src.items():
+
+            # Any time a list is encountered, each item needs to be merged against the default_parameters.
+            # Once complete, the list in the target (the defaults) will be overwritten with the merged list
+            if type(v) == list:
+                merged_list = []
+                for li in v:
+                    merged_list_item = copy.deepcopy(target[k][0]) # Always copies against the first item in the default's list
+                    self.recursive_update(merged_list_item, li)
+                    merged_list.append(merged_list_item)
+
+                # Overwrite the list object
+                target[k] = merged_list
+
+            elif type(v) == dict:
+                if not k in target:
+                    target[k] = copy.deepcopy(v)
+                else:
+                    self.recursive_update(target[k], v)
+            else:
+                target[k] = copy.copy(v)
 
     # IPMS Function Wrappers
     def get_companies(self):
@@ -160,10 +202,7 @@ class IPMSConnection:
             'gainingCarrierId': 0,
             'losingCarrierId': 0
         }
-
-        if params is not None:
-            for param_name, param_value in params.items():
-                default_params[param_name] = param_value
+        self.recursive_update(default_params, params)
 
         response = self.service_order_003.service.getRequestedPorts(default_params['detail'],
                                                                     default_params['statusList'],
@@ -197,36 +236,21 @@ class IPMSConnection:
             'gspInternalReference': '',
             'losingServiceProviderId': 0,
             'lspOverride': False,
-            'numbers': [],
+            'numbers': [{
+                        'complete': False,
+                        'gainingCarrierId': 0,
+                        'handsetReference': '',
+                        'losingCarrierId': '',
+                        'notRequired': '',
+                        'phoneNumber': {
+                            'phoneNumber': ''
+                        }
+                    }],
             'rfsDateTimeStart': datetime.datetime.now(),
             'prePayPrePaid': False,
             'som': 0
         }
-
-        if params is not None:
-            for param_name, param_value in params.items():
-
-                if param_name == 'numbers':
-                    for number in param_value:
-
-                        default_number_params = {
-                            'complete': False,
-                            'gainingCarrierId': 0,
-                            'handsetReference': '',
-                            'losingCarrierId': '',
-                            'notRequired': '',
-                            'phoneNumber': {
-                                'phoneNumber': ''
-                            }
-                        }
-
-                        for number_param, number_param_value in number.items():
-                            default_number_params[number_param] = number_param_value
-
-                        default_params['numbers'].append(default_number_params)
-
-                else:
-                    default_params[param_name] = param_value
+        self.recursive_update(default_params, params)
 
         response = self.service_order_003.service.requestPort(default_params)
         self.check_response(response)
@@ -244,35 +268,20 @@ class IPMSConnection:
             'losingServiceProviderIncorrect': False,
             'lspInternalReference': '',
             'lspOverride': False,
-            'numbers': [],
-            'prePayPrePaid': False,
-            'som': 0
-        }
-
-        if params is not None:
-            for param_name, param_value in params.items():
-
-                if param_name == 'numbers':
-                    for number in param_value:
-
-                        default_number_params = {
+            'numbers': [{
                             'complete': False,
                             'gainingCarrierId': 0,
                             'handsetReference': '',
-                            'losingCarrierId': '',
-                            'notRequired': '',
+                            'losingCarrierId': 0,
+                            'notRequired': False,
                             'phoneNumber': {
                                 'phoneNumber': ''
                             }
-                        }
-
-                        for number_param, number_param_value in number.items():
-                            default_number_params[number_param] = number_param_value
-
-                        default_params['numbers'].append(default_number_params)
-
-                else:
-                    default_params[param_name] = param_value
+                        }],
+            'prePayPrePaid': False,
+            'som': 0
+        }
+        self.recursive_update(default_params, params)
 
         response = self.service_order_003.service.submitPortResponse(default_params)
         self.check_response(response)
@@ -289,35 +298,20 @@ class IPMSConnection:
             'losingServiceProviderIncorrect': False,
             'lspInternalReference': '',
             'lspOverride': False,
-            'numbers': [],
-            'prePayPrePaid': False,
-            'som': 0
-        }
-
-        if params is not None:
-            for param_name, param_value in params.items():
-
-                if param_name == 'numbers':
-                    for number in param_value:
-
-                        default_number_params = {
+            'numbers': [{
                             'complete': False,
                             'gainingCarrierId': 0,
                             'handsetReference': '',
-                            'losingCarrierId': '',
-                            'notRequired': '',
+                            'losingCarrierId': 0,
+                            'notRequired': False,
                             'phoneNumber': {
                                 'phoneNumber': ''
                             }
-                        }
-
-                        for number_param, number_param_value in number.items():
-                            default_number_params[number_param] = number_param_value
-
-                        default_params['numbers'].append(default_number_params)
-
-                else:
-                    default_params[param_name] = param_value
+                        }],
+            'prePayPrePaid': False,
+            'som': 0
+        }
+        self.recursive_update(default_params, params)
 
         response = self.service_order_003.service.approvePort(default_params)
         self.check_response(response)
@@ -329,35 +323,20 @@ class IPMSConnection:
 
         default_params = {
             'lspOverride': False,
-            'numbers': [],
-            'rfsDateTimeStart': datetime.datetime.now(),
-            'som': 0
-        }
-
-        if params is not None:
-            for param_name, param_value in params.items():
-
-                if param_name == 'numbers':
-                    for number in param_value:
-
-                        default_number_params = {
+            'numbers': [{
                             'complete': False,
                             'gainingCarrierId': 0,
                             'handsetReference': '',
-                            'losingCarrierId': '',
-                            'notRequired': '',
+                            'losingCarrierId': 0,
+                            'notRequired': False,
                             'phoneNumber': {
                                 'phoneNumber': ''
                             }
-                        }
-
-                        for number_param, number_param_value in number.items():
-                            default_number_params[number_param] = number_param_value
-
-                        default_params['numbers'].append(default_number_params)
-
-                else:
-                    default_params[param_name] = param_value
+                        }],
+            'rfsDateTimeStart': datetime.datetime.now(),
+            'som': 0
+        }
+        self.recursive_update(default_params, params)
 
         response = self.service_order_003.service.requestApprovedPortChange(default_params)
         self.check_response(response)
@@ -377,14 +356,7 @@ class IPMSConnection:
             'rfsToDate': self.add_months(datetime.datetime.now(), 3),
             'overdueOnly': False
         }
-
-        if params is not None:
-            for param_name, param_value in params.items():
-
-                if param_name == 'statusList':
-                     default_params['statusList'].append(param_value)
-                else:
-                    default_params[param_name] = param_value
+        self.recursive_update(default_params, params)
 
         response = self.service_order_003.service.getApprovedPortChangeRequests(default_params['som'],
                                                                     default_params['statusList'],
@@ -400,36 +372,26 @@ class IPMSConnection:
 
         default_params = {
             'som': 0,
-            'gainingCarriers': [],
+            # 'gainingCarriers': [{ # Data is only passed if a change is required. This may require further testing and work to get working. If required, contact me (Mark Paine) for more info
+            #                 'complete': False,
+            #                 'gainingCarrierId': 0,
+            #                 'handsetReference': '',
+            #                 'losingCarrierId': 0,
+            #                 'notRequired': False,
+            #                 'phoneNumber': {
+            #                     'phoneNumber': ''
+            #                 }
+            #             }],
             'version': 0
         }
 
-        if params is not None:
-            for param_name, param_value in params.items():
+        self.recursive_update(default_params, params)
 
-                if param_name == 'gainingCarriers':
-                    for number in param_value:
+        gainingCarriers = None
+        if 'gainingCarriers' in default_params:
+            gainingCarriers = default_params['gainingCarriers']
 
-                        default_number_params = {
-                            'complete': False,
-                            'gainingCarrierId': 0,
-                            'handsetReference': '',
-                            'losingCarrierId': '',
-                            'notRequired': '',
-                            'phoneNumber': {
-                                'phoneNumber': ''
-                            }
-                        }
-
-                        for number_param, number_param_value in number.items():
-                            default_number_params[number_param] = number_param_value
-
-                        default_params['gainingCarriers'].append(default_number_params)
-
-                else:
-                    default_params[param_name] = param_value
-
-        response = self.service_order_003.service.acceptApprovedPortChange(default_params['som'], default_params['gainingCarriers'], default_params['version'])
+        response = self.service_order_003.service.acceptApprovedPortChange(default_params['som'], gainingCarriers, default_params['version'])
         self.check_response(response)
         return response
 
@@ -446,7 +408,61 @@ class IPMSConnection:
         self.check_response(response)
         return response
 
-        # ns0: getPortProgress(ns0:getPortProgress)
-        # ns0: getPortProgress(som: xsd: long)
+    def update_port_progress(self, params):
+        print("Update Port Progress")
 
-        # ns0: portProgressResult(errors: ns0: errorData[], success: xsd:boolean, portProgress: ns0:portProgressData[], som: ns0:somData)
+        default_params = {
+            'som': 0,
+            'portProgress': [
+                {
+                    'gainingCarrierProgress': 'Not Done',
+                    'losingCarrierProgress': 'Not Done',
+                    'number': {
+                        'phoneNumber': ''
+                    },
+                    'testedAndCompleteProgress': 'Not Done',
+                    'version': 0
+                }
+            ]
+        }
+        self.recursive_update(default_params, params)
+
+        response = self.service_order_003.service.updatePortProgress(default_params['som'], default_params['portProgress'])
+        self.check_response(response)
+        return response
+
+    def complete_port(self, params):
+        print("Complete Port")
+        response = self.service_order_003.service.completePort(params['som'])
+        self.check_response(response)
+        return response
+
+    def get_network_updates(self, params):
+        print("Get Network Updates")
+
+        # Default Params will return all Network Updates
+        default_params = {
+            'carriers': [{'carrierIds': 0}],
+            'som': 0,
+            'somType': ''
+        }
+        self.recursive_update(default_params, params)
+
+        response = self.service_order_003.service.getNetworkUpdates(default_params['carriers'], default_params['som'], default_params['somType'])
+        self.check_response(response)
+        return response
+
+    def confirm_network_updates(self, params):
+        print("Confirm Network Updates")
+
+        default_params = {
+            'confirmations': [{
+                    'carrierId': 0,
+                    'som': 0
+            }]
+        }
+        self.recursive_update(default_params, params)
+
+        response = self.service_order_003.service.confirmNetworkUpdates(default_params['confirmations'])
+        self.check_response(response)
+        return response
