@@ -28,36 +28,36 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 
 | Function Call  | Implentation Status |
 | ------------- | ------------- |
-| acceptApprovedPortChange | - [x] Implemented |
-| activatePort | [x] Implemented |
-| approvePort | [x] Implemented |
-| cancelPort | - [ ] TBC |
-| changePassword | [ ] TBC |
-| completePort | [x] Implemented |
-| confirmNetworkUpdates | [x] Implemented |
-| failPort | [ ] TBC |
-| getApprovedPortChangeRequests | [x] Implemented |
-| getApprovedPorts | [x] Implemented |
-| getCarriers | [x] Implemented |
-| getCompanies | [x] Implemented |
-| getCurrentUserData | [ ] TBC |
-| getNetworkUpdates | [x] Implemented |
-| getPortProgress | [x] Implemented |
-| getRequestedPorts | [x] Implemented |
-| getServiceProviders | [x] Implemented |
-| numberEnquiry | [x] Implemented |
-| rejectApprovedPortChange | [ ] TBC |
-| rejectPort | [ ] TBC |
-| requestApprovedPortChange | [x] Implemented |
-| requestEmergencyReturn | [ ] TBC |
-| requestPort | [x] Implemented |
-| requestRelinquishment | [ ] TBC |
-| sOMEnquiry | [ ] TBC |
-| sOMStatusEnquiry | [ ] TBC |
-| submitPortResponse | [x] Implemented |
-| updatePortProgress | [x] Implemented |
-| version | [ ] TBC |
-| withdrawPort | [ ] TBC |
+| acceptApprovedPortChange | :white_square_button: Implemented |
+| activatePort | :white_square_button: Implemented |
+| approvePort | :white_square_button: Implemented |
+| cancelPort | :white_medium_square: TBC |
+| changePassword | :white_medium_square: TBC |
+| completePort | :white_square_button: Implemented |
+| confirmNetworkUpdates | :white_square_button: Implemented |
+| failPort | :white_medium_square: TBC |
+| getApprovedPortChangeRequests | :white_square_button: Implemented |
+| getApprovedPorts | :white_square_button: Implemented |
+| getCarriers | :white_square_button: Implemented |
+| getCompanies | :white_square_button: Implemented |
+| getCurrentUserData | :white_medium_square: TBC |
+| getNetworkUpdates | :white_square_button: Implemented |
+| getPortProgress | :white_square_button: Implemented |
+| getRequestedPorts | :white_square_button: Implemented |
+| getServiceProviders | :white_square_button: Implemented |
+| numberEnquiry | :white_square_button: Implemented |
+| rejectApprovedPortChange | :white_medium_square: TBC |
+| rejectPort | :white_medium_square: TBC |
+| requestApprovedPortChange | :white_square_button: Implemented |
+| requestEmergencyReturn | :white_medium_square: TBC |
+| requestPort | :white_square_button: Implemented |
+| requestRelinquishment | :white_medium_square: TBC |
+| sOMEnquiry | :white_medium_square: TBC |
+| sOMStatusEnquiry | :white_medium_square: TBC |
+| submitPortResponse | :white_square_button: Implemented |
+| updatePortProgress | :white_square_button: Implemented |
+| version | :white_medium_square: TBC |
+| withdrawPort | :white_medium_square: TBC |
 
 
 # Installation
