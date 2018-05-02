@@ -28,36 +28,36 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 
 | Function Call  | Implentation Status |
 | ------------- | ------------- |
-| acceptApprovedPortChange | :white_check_mark: Implemented |
-| activatePort | :white_check_mark: Implemented |
-| approvePort | :white_check_mark: Implemented |
-| cancelPort | :black_large_square: TBC |
-| changePassword | :black_large_square: TBC |
-| completePort | :white_check_mark: Implemented |
-| confirmNetworkUpdates | :white_check_mark: Implemented |
-| failPort | :black_large_square: TBC |
-| getApprovedPortChangeRequests | :white_check_mark: Implemented |
-| getApprovedPorts | :white_check_mark: Implemented |
-| getCarriers | :white_check_mark: Implemented |
-| getCompanies | :white_check_mark: Implemented |
-| getCurrentUserData | :black_large_square: TBC |
-| getNetworkUpdates | :white_check_mark: Implemented |
-| getPortProgress | :white_check_mark: Implemented |
-| getRequestedPorts | :white_check_mark: Implemented |
-| getServiceProviders | :white_check_mark: Implemented |
-| numberEnquiry | :white_check_mark: Implemented |
-| rejectApprovedPortChange | :black_large_square: TBC |
-| rejectPort | :black_large_square: TBC |
-| requestApprovedPortChange | :white_check_mark: Implemented |
-| requestEmergencyReturn | :black_large_square: TBC |
-| requestPort | :white_check_mark: Implemented |
-| requestRelinquishment | :black_large_square: TBC |
-| sOMEnquiry | :black_large_square: TBC |
-| sOMStatusEnquiry | :black_large_square: TBC |
-| submitPortResponse | :white_check_mark: Implemented |
-| updatePortProgress | :white_check_mark: Implemented |
-| version | :black_large_square: TBC |
-| withdrawPort | :black_large_square: TBC |
+| acceptApprovedPortChange | [x] Implemented |
+| activatePort | [x] Implemented |
+| approvePort | [x] Implemented |
+| cancelPort | [ ] TBC |
+| changePassword | [ ] TBC |
+| completePort | [x] Implemented |
+| confirmNetworkUpdates | [x] Implemented |
+| failPort | [ ] TBC |
+| getApprovedPortChangeRequests | [x] Implemented |
+| getApprovedPorts | [x] Implemented |
+| getCarriers | [x] Implemented |
+| getCompanies | [x] Implemented |
+| getCurrentUserData | [ ] TBC |
+| getNetworkUpdates | [x] Implemented |
+| getPortProgress | [x] Implemented |
+| getRequestedPorts | [x] Implemented |
+| getServiceProviders | [x] Implemented |
+| numberEnquiry | [x] Implemented |
+| rejectApprovedPortChange | [ ] TBC |
+| rejectPort | [ ] TBC |
+| requestApprovedPortChange | [x] Implemented |
+| requestEmergencyReturn | [ ] TBC |
+| requestPort | [x] Implemented |
+| requestRelinquishment | [ ] TBC |
+| sOMEnquiry | [ ] TBC |
+| sOMStatusEnquiry | [ ] TBC |
+| submitPortResponse | [x] Implemented |
+| updatePortProgress | [x] Implemented |
+| version | [ ] TBC |
+| withdrawPort | [ ] TBC |
 
 
 # Installation
