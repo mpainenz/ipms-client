@@ -31,33 +31,33 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 | acceptApprovedPortChange | :white_check_mark: Implemented |
 | activatePort | :white_check_mark: Implemented |
 | approvePort | :white_check_mark: Implemented |
-| cancelPort | :white_large_square: TBC |
-| changePassword | :white_large_square: TBC |
+| cancelPort | :white_medium_square: TBC |
+| changePassword | :white_medium_square: TBC |
 | completePort | :white_check_mark: Implemented |
 | confirmNetworkUpdates | :white_check_mark: Implemented |
-| failPort | :white_large_square: TBC |
+| failPort | :white_medium_square: TBC |
 | getApprovedPortChangeRequests | :white_check_mark: Implemented |
 | getApprovedPorts | :white_check_mark: Implemented |
 | getCarriers | :white_check_mark: Implemented |
 | getCompanies | :white_check_mark: Implemented |
-| getCurrentUserData | :white_large_square: TBC |
+| getCurrentUserData | :white_medium_square: TBC |
 | getNetworkUpdates | :white_check_mark: Implemented |
 | getPortProgress | :white_check_mark: Implemented |
 | getRequestedPorts | :white_check_mark: Implemented |
 | getServiceProviders | :white_check_mark: Implemented |
 | numberEnquiry | :white_check_mark: Implemented |
-| rejectApprovedPortChange | :white_large_square: TBC |
-| rejectPort | :white_large_square: TBC |
+| rejectApprovedPortChange | :white_medium_square: TBC |
+| rejectPort | :white_medium_square: TBC |
 | requestApprovedPortChange | :white_check_mark: Implemented |
-| requestEmergencyReturn | :white_large_square: TBC |
+| requestEmergencyReturn | :white_medium_square: TBC |
 | requestPort | :white_check_mark: Implemented |
-| requestRelinquishment | :white_large_square: TBC |
-| sOMEnquiry | :white_large_square: TBC |
-| sOMStatusEnquiry | :white_large_square: TBC |
+| requestRelinquishment | :white_medium_square: TBC |
+| sOMEnquiry | :white_medium_square: TBC |
+| sOMStatusEnquiry | :white_medium_square: TBC |
 | submitPortResponse | :white_check_mark: Implemented |
 | updatePortProgress | :white_check_mark: Implemented |
-| version | :white_large_square: TBC |
-| withdrawPort | :white_large_square: TBC |
+| version | :white_medium_square: TBC |
+| withdrawPort | :white_medium_square: TBC |
 
 
 # Installation
