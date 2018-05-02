@@ -31,33 +31,33 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 | acceptApprovedPortChange | :white_check_mark: Implemented |
 | activatePort | :white_check_mark: Implemented |
 | approvePort | :white_check_mark: Implemented |
-| cancelPort | :heavy_minus_sign: TBC |
-| changePassword | :heavy_minus_sign: TBC |
+| cancelPort | :white_large_square: TBC |
+| changePassword | :white_large_square: TBC |
 | completePort | :white_check_mark: Implemented |
 | confirmNetworkUpdates | :white_check_mark: Implemented |
-| failPort | :heavy_minus_sign: TBC |
+| failPort | :white_large_square: TBC |
 | getApprovedPortChangeRequests | :white_check_mark: Implemented |
 | getApprovedPorts | :white_check_mark: Implemented |
 | getCarriers | :white_check_mark: Implemented |
 | getCompanies | :white_check_mark: Implemented |
-| getCurrentUserData | :heavy_minus_sign: TBC |
+| getCurrentUserData | :white_large_square: TBC |
 | getNetworkUpdates | :white_check_mark: Implemented |
 | getPortProgress | :white_check_mark: Implemented |
 | getRequestedPorts | :white_check_mark: Implemented |
 | getServiceProviders | :white_check_mark: Implemented |
 | numberEnquiry | :white_check_mark: Implemented |
-| rejectApprovedPortChange | :heavy_minus_sign: TBC |
-| rejectPort | :heavy_minus_sign: TBC |
+| rejectApprovedPortChange | :white_large_square: TBC |
+| rejectPort | :white_large_square: TBC |
 | requestApprovedPortChange | :white_check_mark: Implemented |
-| requestEmergencyReturn | :heavy_minus_sign: TBC |
+| requestEmergencyReturn | :white_large_square: TBC |
 | requestPort | :white_check_mark: Implemented |
-| requestRelinquishment | :heavy_minus_sign: TBC |
-| sOMEnquiry | :heavy_minus_sign: TBC |
-| sOMStatusEnquiry | :heavy_minus_sign: TBC |
+| requestRelinquishment | :white_large_square: TBC |
+| sOMEnquiry | :white_large_square: TBC |
+| sOMStatusEnquiry | :white_large_square: TBC |
 | submitPortResponse | :white_check_mark: Implemented |
 | updatePortProgress | :white_check_mark: Implemented |
-| version | :heavy_minus_sign: TBC |
-| withdrawPort | :heavy_minus_sign: TBC |
+| version | :white_large_square: TBC |
+| withdrawPort | :white_large_square: TBC |
 
 
 # Installation
