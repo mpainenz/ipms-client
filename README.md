@@ -28,10 +28,10 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 
 | Function Call  | Implentation Status |
 | ------------- | ------------- |
-| acceptApprovedPortChange | [x] Implemented |
+| acceptApprovedPortChange | - [x] Implemented |
 | activatePort | [x] Implemented |
 | approvePort | [x] Implemented |
-| cancelPort | [ ] TBC |
+| cancelPort | - [ ] TBC |
 | changePassword | [ ] TBC |
 | completePort | [x] Implemented |
 | confirmNetworkUpdates | [x] Implemented |
