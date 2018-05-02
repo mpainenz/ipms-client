@@ -59,7 +59,7 @@ Some function calls have not yet been implemented, however because the framework
 
 # Usage
 
-For a basic example, look at the [examples\basic_functions.py](examples\basic_functions.py) script.
+For a basic example, look at the [examples/basic_functions.py](examples/basic_functions.py) script.
 
 Simply change the Username, Password, and Carrier ID fields to something valid, and run the script to connect to IPMS
 
@@ -79,4 +79,4 @@ if success:
     print(som_info_response)
 ```
 
-For more rigourous examples, take a look at [vngs_test_loop.py](vngs_test_loop.py)
+For more rigourous examples, take a look at [examples/vngs_test_loop.py](examples/vngs_test_loop.py)
