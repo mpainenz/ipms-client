@@ -24,6 +24,42 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
   - [Zeep](http://docs.python-zeep.org/en/master/) (A Python SOAP client library)
 
 
+# Available Functions
+
+| Function Call  | Implentation Status |
+| ------------- | ------------- |
+| acceptApprovedPortChange | :white_check_mark: Supported |
+| activatePort | :white_check_mark: Supported |
+| approvePort | :white_check_mark: Supported |
+| cancelPort | Not Supported |
+| changePassword | Not Supported |
+| completePort | :white_check_mark: Supported |
+| confirmNetworkUpdates | :white_check_mark: Supported |
+| failPort | Not Supported |
+| getApprovedPortChangeRequests | :white_check_mark: Supported |
+| getApprovedPorts | :white_check_mark: Supported |
+| getCarriers | :white_check_mark: Supported |
+| getCompanies | :white_check_mark: Supported |
+| getCurrentUserData | Not Supported |
+| getNetworkUpdates | :white_check_mark: Supported |
+| getPortProgress | :white_check_mark: Supported |
+| getRequestedPorts | :white_check_mark: Supported |
+| getServiceProviders | :white_check_mark: Supported |
+| numberEnquiry | :white_check_mark: Supported |
+| rejectApprovedPortChange | Not Supported |
+| rejectPort | Not Supported |
+| requestApprovedPortChange | :white_check_mark: Supported |
+| requestEmergencyReturn | Not Supported |
+| requestPort | :white_check_mark: Supported |
+| requestRelinquishment | Not Supported |
+| sOMEnquiry | Not Supported |
+| sOMStatusEnquiry | Not Supported |
+| submitPortResponse | :white_check_mark: Supported |
+| updatePortProgress | :white_check_mark: Supported |
+| version | Not Supported |
+| withdrawPort | Not Supported |
+
+
 # Installation
 
   - Install [Python 3.6](https://www.python.org/downloads/release/python-360/) or later
