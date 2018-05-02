@@ -28,36 +28,36 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 
 | Function Call  | Implentation Status |
 | ------------- | ------------- |
-| acceptApprovedPortChange | :white_check_mark: Supported |
-| activatePort | :white_check_mark: Supported |
-| approvePort | :white_check_mark: Supported |
-| cancelPort | :x: Not Supported |
-| changePassword | :x: Not Supported |
-| completePort | :white_check_mark: Supported |
-| confirmNetworkUpdates | :white_check_mark: Supported |
-| failPort | :x: Not Supported |
-| getApprovedPortChangeRequests | :white_check_mark: Supported |
-| getApprovedPorts | :white_check_mark: Supported |
-| getCarriers | :white_check_mark: Supported |
-| getCompanies | :white_check_mark: Supported |
-| getCurrentUserData | :x: Not Supported |
-| getNetworkUpdates | :white_check_mark: Supported |
-| getPortProgress | :white_check_mark: Supported |
-| getRequestedPorts | :white_check_mark: Supported |
-| getServiceProviders | :white_check_mark: Supported |
-| numberEnquiry | :white_check_mark: Supported |
-| rejectApprovedPortChange | :x: Not Supported |
-| rejectPort | :x: Not Supported |
-| requestApprovedPortChange | :white_check_mark: Supported |
-| requestEmergencyReturn | :x: Not Supported |
-| requestPort | :white_check_mark: Supported |
-| requestRelinquishment | :x: Not Supported |
-| sOMEnquiry | :x: Not Supported |
-| sOMStatusEnquiry | :x: Not Supported |
-| submitPortResponse | :white_check_mark: Supported |
-| updatePortProgress | :white_check_mark: Supported |
-| version | :x: Not Supported |
-| withdrawPort | :x: Not Supported |
+| acceptApprovedPortChange | :white_check_mark: Implemented |
+| activatePort | :white_check_mark: Implemented |
+| approvePort | :white_check_mark: Implemented |
+| cancelPort | :x: Not Implemented |
+| changePassword | :x: Not Implemented |
+| completePort | :white_check_mark: Implemented |
+| confirmNetworkUpdates | :white_check_mark: Implemented |
+| failPort | :x: Not Implemented |
+| getApprovedPortChangeRequests | :white_check_mark: Implemented |
+| getApprovedPorts | :white_check_mark: Implemented |
+| getCarriers | :white_check_mark: Implemented |
+| getCompanies | :white_check_mark: Implemented |
+| getCurrentUserData | :x: Not Implemented |
+| getNetworkUpdates | :white_check_mark: Implemented |
+| getPortProgress | :white_check_mark: Implemented |
+| getRequestedPorts | :white_check_mark: Implemented |
+| getServiceProviders | :white_check_mark: Implemented |
+| numberEnquiry | :white_check_mark: Implemented |
+| rejectApprovedPortChange | :x: Not Implemented |
+| rejectPort | :x: Not Implemented |
+| requestApprovedPortChange | :white_check_mark: Implemented |
+| requestEmergencyReturn | :x: Not Implemented |
+| requestPort | :white_check_mark: Implemented |
+| requestRelinquishment | :x: Not Implemented |
+| sOMEnquiry | :x: Not Implemented |
+| sOMStatusEnquiry | :x: Not Implemented |
+| submitPortResponse | :white_check_mark: Implemented |
+| updatePortProgress | :white_check_mark: Implemented |
+| version | :x: Not Implemented |
+| withdrawPort | :x: Not Implemented |
 
 
 # Installation
