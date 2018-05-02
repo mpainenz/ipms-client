@@ -31,33 +31,33 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
 | acceptApprovedPortChange | :white_check_mark: Supported |
 | activatePort | :white_check_mark: Supported |
 | approvePort | :white_check_mark: Supported |
-| cancelPort | Not Supported |
-| changePassword | Not Supported |
+| cancelPort | :x: Not Supported |
+| changePassword | :x: Not Supported |
 | completePort | :white_check_mark: Supported |
 | confirmNetworkUpdates | :white_check_mark: Supported |
-| failPort | Not Supported |
+| failPort | :x: Not Supported |
 | getApprovedPortChangeRequests | :white_check_mark: Supported |
 | getApprovedPorts | :white_check_mark: Supported |
 | getCarriers | :white_check_mark: Supported |
 | getCompanies | :white_check_mark: Supported |
-| getCurrentUserData | Not Supported |
+| getCurrentUserData | :x: Not Supported |
 | getNetworkUpdates | :white_check_mark: Supported |
 | getPortProgress | :white_check_mark: Supported |
 | getRequestedPorts | :white_check_mark: Supported |
 | getServiceProviders | :white_check_mark: Supported |
 | numberEnquiry | :white_check_mark: Supported |
-| rejectApprovedPortChange | Not Supported |
-| rejectPort | Not Supported |
+| rejectApprovedPortChange | :x: Not Supported |
+| rejectPort | :x: Not Supported |
 | requestApprovedPortChange | :white_check_mark: Supported |
-| requestEmergencyReturn | Not Supported |
+| requestEmergencyReturn | :x: Not Supported |
 | requestPort | :white_check_mark: Supported |
-| requestRelinquishment | Not Supported |
-| sOMEnquiry | Not Supported |
-| sOMStatusEnquiry | Not Supported |
+| requestRelinquishment | :x: Not Supported |
+| sOMEnquiry | :x: Not Supported |
+| sOMStatusEnquiry | :x: Not Supported |
 | submitPortResponse | :white_check_mark: Supported |
 | updatePortProgress | :white_check_mark: Supported |
-| version | Not Supported |
-| withdrawPort | Not Supported |
+| version | :x: Not Supported |
+| withdrawPort | :x: Not Supported |
 
 
 # Installation
