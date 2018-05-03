@@ -60,7 +60,7 @@ Some function calls have not yet been implemented, however it is not difficult t
 
   - Install [Python 3.6](https://www.python.org/downloads/release/python-360/) or later
   - Clone this library using a Git client, such as [TortoiseGit](https://tortoisegit.org/) for Windows (Or simply download using the green link above)
-  - You can then either use Python from command line to execute the example.py script, or I would recommend using an IDE like PyCharm which is a lot more user-friendly
+  - You can then either use Python from command line to execute script from the [examples](examples) directory, or I would recommend using an IDE like PyCharm which is a lot more user-friendly
 
 
 # Usage
