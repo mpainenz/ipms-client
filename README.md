@@ -79,10 +79,10 @@ ipms_connection = api_client.IPMSConnection(ipms_interface=api_client.IPMS_TRAIN
                                             password='something',
                                             company_id=123)
 
-som_info_response = ipms_connection.som_enquiry(123456)
-success = som_info_response['success']
+response = ipms_connection.som_enquiry(123456)
+success = response['success']
 if success:
-    print(som_info_response)
+    print(response)
 ```
 
 For more rigourous examples, take a look at [examples/vngs_test_loop.py](examples/vngs_test_loop.py)
