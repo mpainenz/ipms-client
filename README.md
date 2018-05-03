@@ -2,7 +2,7 @@
 
 ## What is IPMS?
 
-The [Industry Portability Management System](https://www.tcf.org.nz/industry/numbering/number-portability/access-to-ipms/) is a government regulated service provided to New Zealand Carriers and Service provider Companies in order to Port telephone numbers between members. 
+The [Industry Portability Management System](https://www.tcf.org.nz/industry/numbering/number-portability/access-to-ipms/) is a government regulated service provided to New Zealand Telecommunication Carriers and Service provider Companies in order to Port telephone numbers between members. 
 
 Number Portability allows New Zealand consumers to keep ownership of their Telephone numbers when changing Service Providers.
 
