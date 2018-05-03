@@ -20,7 +20,7 @@ This library supports TLS1.2 SSL.
 
 # Available IPMS Functions
 
-Some function calls have not yet been implemented, however because the framework is built, it is not difficult to add any missing functions. If missing functions are needed, please create an issue to request missing functionality be added.
+Some function calls have not yet been implemented, however it is not difficult to add any missing functions. If a missing functions is required, please create an issue to request missing functionality be added.
 
 | Function Call  | Implentation Status |
 | ------------- | ------------- |
